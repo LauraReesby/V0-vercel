@@ -1,61 +1,54 @@
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Star } from "lucide-react"
-
-const reviews = [
-  {
-    name: "Party Pete",
-    avatar: "/placeholder-user.jpg",
-    rating: 5,
-    comment:
-      "Bought this for my daughter's 4th birthday. Best. Party. Ever. The other parents were both horrified and impressed. 10/10 would do it again.",
-  },
-  {
-    name: "Brenda from HR",
-    avatar: "/placeholder-user.jpg",
-    rating: 5,
-    comment:
-      "Our quarterly earnings call has never been more... fluid. Productivity is through the roof, or maybe that's just the ceiling spinning. Who knows!",
-  },
-  {
-    name: "Anonymous Engineer",
-    avatar: "/placeholder-user.jpg",
-    rating: 4,
-    comment:
-      "The fluid dynamics are surprisingly robust, but the power draw tripped the main breaker for our entire city block. Worth it, but had to give it 4 stars for the city-wide blackout.",
-  },
-]
 
 export function ReviewsTab() {
+  const reviews = [
+    {
+      name: "Chad Broseph",
+      handle: "@FratStarChad",
+      review:
+        "This thing is an absolute UNIT. We cranked out margs for the whole chapter during rush week. Didn't even break a sweat. 10/10 would recommend.",
+      rating: 5,
+    },
+    {
+      name: "Brenda from Accounting",
+      handle: "@BrendaLovesCats",
+      review:
+        "I bought this for my son's graduation party. It was a bit much, but everyone seemed to enjoy it. The noise was considerable.",
+      rating: 4,
+    },
+    {
+      name: "Mad Dog's Bar & Grill",
+      handle: "@MadDogsOfficial",
+      review:
+        "Our old machine couldn't keep up on Cinco de Mayo. The Industrial Rig saved us. Paid for itself in one night. A commercial-grade beast.",
+      rating: 5,
+    },
+  ]
+
   return (
-    <div>
-      <h2 className="text-4xl font-black mb-6">Customer Feedback</h2>
-      <div className="space-y-6">
-        {reviews.map((review) => (
-          <Card key={review.name} className="border-2 border-black shadow-brutal">
-            <CardHeader className="flex flex-row items-center justify-between">
-              <div className="flex items-center gap-4">
-                <Avatar className="border-2 border-black">
-                  <AvatarImage src={review.avatar || "/placeholder.svg"} alt={review.name} />
-                  <AvatarFallback>{review.name.substring(0, 2)}</AvatarFallback>
-                </Avatar>
-                <p className="text-xl font-bold">{review.name}</p>
+    <div className="space-y-6">
+      {reviews.map((review) => (
+        <div key={review.name} className="bg-white border-4 border-black p-4 shadow-brutal">
+          <div className="flex items-start gap-4">
+            <Avatar className="h-12 w-12 border-2 border-black">
+              <AvatarImage src={`/placeholder-user.jpg`} />
+              <AvatarFallback>{review.name.substring(0, 2)}</AvatarFallback>
+            </Avatar>
+            <div className="flex-1">
+              <div className="flex items-baseline gap-2">
+                <p className="font-bold text-lg">{review.name}</p>
+                <p className="text-sm text-gray-600">{review.handle}</p>
               </div>
-              <div className="flex items-center gap-1">
-                {[...Array(review.rating)].map((_, i) => (
-                  <Star key={i} className="w-6 h-6 text-accent-foreground fill-accent" />
-                ))}
-                {[...Array(5 - review.rating)].map((_, i) => (
-                  <Star key={i} className="w-6 h-6 text-muted-foreground" />
-                ))}
-              </div>
-            </CardHeader>
-            <CardContent>
-              <p className="text-lg font-mono">"{review.comment}"</p>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
+              <p className="mt-1">{review.review}</p>
+            </div>
+            <div className="flex items-center gap-1 font-black text-2xl">
+              <span>{review.rating}</span>
+              <span>/</span>
+              <span>5</span>
+            </div>
+          </div>
+        </div>
+      ))}
     </div>
   )
 }

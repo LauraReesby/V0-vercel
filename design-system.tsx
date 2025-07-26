@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { OverviewTab } from "@/components/overview-tab"
@@ -7,7 +9,7 @@ import { ReviewsTab } from "@/components/reviews-tab"
 
 export default function DesignSystem() {
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full max-w-6xl mx-auto font-mono">
       <header className="flex flex-col md:flex-row items-center justify-between mb-8 p-4 border-4 border-black bg-accent shadow-brutal">
         <div className="flex items-center gap-4">
           <Image src="/logo.png" alt="Logo" width={80} height={80} className="border-2 border-black" />
@@ -22,25 +24,25 @@ export default function DesignSystem() {
         <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 bg-transparent p-0">
           <TabsTrigger
             value="overview"
-            className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-brutal-inverse border-2 border-black text-lg font-bold py-3 focus:bg-accent"
+            className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-brutal-inverse border-2 border-black text-lg font-bold py-3 focus:bg-accent/80"
           >
             Overview
           </TabsTrigger>
           <TabsTrigger
             value="recipes"
-            className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-brutal-inverse border-2 border-black text-lg font-bold py-3 focus:bg-accent"
+            className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-brutal-inverse border-2 border-black text-lg font-bold py-3 focus:bg-accent/80"
           >
             Recipes
           </TabsTrigger>
           <TabsTrigger
             value="directions"
-            className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-brutal-inverse border-2 border-black text-lg font-bold py-3 focus:bg-accent"
+            className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-brutal-inverse border-2 border-black text-lg font-bold py-3 focus:bg-accent/80"
           >
             Directions
           </TabsTrigger>
           <TabsTrigger
             value="reviews"
-            className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-brutal-inverse border-2 border-black text-lg font-bold py-3 focus:bg-accent"
+            className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-brutal-inverse border-2 border-black text-lg font-bold py-3 focus:bg-accent/80"
           >
             Reviews
           </TabsTrigger>
