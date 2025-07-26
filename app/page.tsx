@@ -1,9 +1,7 @@
-import DesignSystem from "@/design-system"
+"use client"
 
-export default function Home() {
-  return (
-    <main>
-      <DesignSystem />
-    </main>
-  )
+import BauhausBrutalism from "../design-system"
+
+export default function SyntheticV0PageForDeployment() {
+  return <BauhausBrutalism />
 }

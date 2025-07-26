@@ -1,34 +1,49 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-
-export default function RecipesTab() {
+export function RecipesTab() {
   return (
-    <Card className="border-secondary border-2">
-      <CardHeader>
-        <CardTitle className="text-2xl text-secondary">Signature Recipes</CardTitle>
-      </CardHeader>
-      <CardContent className="space-y-6">
-        <div>
-          <h3 className="font-bold text-lg text-primary">The Classic Swamp Ass</h3>
-          <p className="text-muted-foreground">For a 25-gallon batch:</p>
-          <ul className="list-decimal list-inside space-y-1 mt-2">
-            <li>10 Gallons of your favorite Tequila</li>
-            <li>5 Gallons of Triple Sec</li>
-            <li>7.5 Gallons of fresh Lime Juice</li>
-            <li>2.5 Gallons of Simple Syrup</li>
-            <li>A splash of swamp water (optional, for authenticity)</li>
+    <section className="space-y-12">
+      <div className="space-y-4 text-center">
+        <h2 className="text-4xl font-black tracking-tighter uppercase border-b-4 border-black pb-2 inline-block">
+          GATOR-APPROVED RECIPES
+        </h2>
+        <p className="text-xl max-w-2xl mx-auto">A few of our favorite concoctions to get you started.</p>
+      </div>
+
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="bg-white border-8 border-black p-8 shadow-brutal">
+          <h3 className="text-2xl font-black mb-4 uppercase border-b-4 border-black pb-2">The Classic Swamp Water</h3>
+          <p className="text-lg font-mono mb-4">The tried-and-true classic. Can't go wrong.</p>
+          <ul className="list-disc list-inside font-mono space-y-2">
+            <li>1 bottle (750ml) Tequila</li>
+            <li>1/2 bottle (375ml) Triple Sec</li>
+            <li>1 large can (12oz) frozen limeade</li>
+            <li>Fill rest of the way with water</li>
           </ul>
         </div>
-        <div>
-          <h3 className="font-bold text-lg text-primary">Gator-Bait Gold</h3>
-          <p className="text-muted-foreground">For a 25-gallon batch:</p>
-          <ul className="list-decimal list-inside space-y-1 mt-2">
-            <li>12 Gallons of Reposado Tequila</li>
-            <li>6 Gallons of Grand Marnier</li>
-            <li>7 Gallons of fresh Lime Juice</li>
-            <li>A hint of agave nectar to taste</li>
+
+        <div className="bg-white border-8 border-black p-8 shadow-brutal">
+          <h3 className="text-2xl font-black mb-4 uppercase border-b-4 border-black pb-2">Spicy Cypress Sipper</h3>
+          <p className="text-lg font-mono mb-4">For those who like a little kick in the pants.</p>
+          <ul className="list-disc list-inside font-mono space-y-2">
+            <li>1 bottle (750ml) Tequila</li>
+            <li>1/2 bottle (375ml) Triple Sec</li>
+            <li>1 large can (12oz) frozen limeade</li>
+            <li>4-5 sliced jalapeños (more if you're brave)</li>
+            <li>Fill rest with water</li>
           </ul>
         </div>
-      </CardContent>
-    </Card>
+
+        <div className="bg-white border-8 border-black p-8 shadow-brutal">
+          <h3 className="text-2xl font-black mb-4 uppercase border-b-4 border-black pb-2">Bayou Berry Blitz</h3>
+          <p className="text-lg font-mono mb-4">A sweeter option for a hot day.</p>
+          <ul className="list-disc list-inside font-mono space-y-2">
+            <li>1 bottle (750ml) Tequila</li>
+            <li>1/2 bottle (375ml) Triple Sec</li>
+            <li>1 large can (12oz) frozen strawberry mix</li>
+            <li>1 cup fresh strawberries</li>
+            <li>Fill rest with water</li>
+          </ul>
+        </div>
+      </div>
+    </section>
   )
 }
