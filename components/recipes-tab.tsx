@@ -1,41 +1,49 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-
 export function RecipesTab() {
-  const recipes = [
-    {
-      title: "THE CLASSIC RIG",
-      description: "The one that started it all. A perfect balance of tart, sweet, and tequila.",
-      ingredients: ["3 Gallons Tequila Blanco", "1.5 Gallons Lime Juice", "1 Gallon Triple Sec", "50 lbs Ice"],
-    },
-    {
-      title: "BAYOU BLASTER",
-      description: "A murky, potent concoction with a hint of melon. Not for the faint of heart.",
-      ingredients: ["3 Gallons Tequila Reposado", "1 Gallon Midori", "1.5 Gallons Sour Mix", "50 lbs Ice"],
-    },
-    {
-      title: "VOODOO VENOM",
-      description: "Jalapeño-infused tequila brings the heat. The mango puree cools it down. A paradox in a glass.",
-      ingredients: ["3 Gallons Jalapeño Tequila", "2 Gallons Mango Puree", "0.5 Gallons Lime Juice", "50 lbs Ice"],
-    },
-  ]
-
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {recipes.map((recipe) => (
-        <Card key={recipe.title} className="bg-white border-4 border-black shadow-brutal flex flex-col">
-          <CardHeader className="border-b-4 border-black bg-accent p-4">
-            <CardTitle className="font-black tracking-tighter text-2xl text-black">{recipe.title}</CardTitle>
-          </CardHeader>
-          <CardContent className="p-4 flex-grow">
-            <p className="mb-4">{recipe.description}</p>
-            <ul className="list-disc pl-5 font-mono text-sm">
-              {recipe.ingredients.map((ingredient) => (
-                <li key={ingredient}>{ingredient}</li>
-              ))}
-            </ul>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
+    <section className="space-y-12">
+      <div className="space-y-4 text-center">
+        <h2 className="text-4xl font-black tracking-tighter uppercase border-b-4 border-black pb-2 inline-block">
+          GATOR-APPROVED RECIPES
+        </h2>
+        <p className="text-xl max-w-2xl mx-auto">A few of our favorite concoctions to get you started.</p>
+      </div>
+
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="bg-white border-8 border-black p-8 shadow-brutal">
+          <h3 className="text-2xl font-black mb-4 uppercase border-b-4 border-black pb-2">The Classic Swamp Water</h3>
+          <p className="text-lg font-mono mb-4">The tried-and-true classic. Can't go wrong.</p>
+          <ul className="list-disc list-inside font-mono space-y-2">
+            <li>1 bottle (750ml) Tequila</li>
+            <li>1/2 bottle (375ml) Triple Sec</li>
+            <li>1 large can (12oz) frozen limeade</li>
+            <li>Fill rest of the way with water</li>
+          </ul>
+        </div>
+
+        <div className="bg-white border-8 border-black p-8 shadow-brutal">
+          <h3 className="text-2xl font-black mb-4 uppercase border-b-4 border-black pb-2">Spicy Cypress Sipper</h3>
+          <p className="text-lg font-mono mb-4">For those who like a little kick in the pants.</p>
+          <ul className="list-disc list-inside font-mono space-y-2">
+            <li>1 bottle (750ml) Tequila</li>
+            <li>1/2 bottle (375ml) Triple Sec</li>
+            <li>1 large can (12oz) frozen limeade</li>
+            <li>4-5 sliced jalapeños (more if you're brave)</li>
+            <li>Fill rest with water</li>
+          </ul>
+        </div>
+
+        <div className="bg-white border-8 border-black p-8 shadow-brutal">
+          <h3 className="text-2xl font-black mb-4 uppercase border-b-4 border-black pb-2">Bayou Berry Blitz</h3>
+          <p className="text-lg font-mono mb-4">A sweeter option for a hot day.</p>
+          <ul className="list-disc list-inside font-mono space-y-2">
+            <li>1 bottle (750ml) Tequila</li>
+            <li>1/2 bottle (375ml) Triple Sec</li>
+            <li>1 large can (12oz) frozen strawberry mix</li>
+            <li>1 cup fresh strawberries</li>
+            <li>Fill rest with water</li>
+          </ul>
+        </div>
+      </div>
+    </section>
   )
 }

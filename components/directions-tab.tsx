@@ -1,38 +1,64 @@
 export function DirectionsTab() {
   return (
-    <div className="prose prose-lg max-w-none prose-headings:font-black prose-headings:tracking-tighter prose-p:font-mono">
-      <h2 className="text-4xl">Assembly & Operation</h2>
-      <ol>
-        <li>
-          <strong>Unbox with Vigor:</strong> Place the main unit on a sturdy, level surface capable of supporting 150
-          lbs of pure party potential.
-        </li>
-        <li>
-          <strong>Attach the Spigot:</strong> Screw the industrial-grade spigot into the front receptacle. Hand-tighten,
-          then give it a quarter-turn with a wrench. Do not overtighten.
-        </li>
-        <li>
-          <strong>Connect Power:</strong> Plug the heavy-duty power cord into a dedicated 20-amp circuit. Do not use
-          extension cords. This beast is thirsty.
-        </li>
-        <li>
-          <strong>Fill the Hopper:</strong> Pour your margarita mix and tequila directly into the stainless steel
-          hopper. Add ice. The machine craves ice.
-        </li>
-        <li>
-          <strong>Engage Churn:</strong> Flip the large, satisfyingly-red switch to 'ON'. The internal auger will begin
-          its glorious churn.
-        </li>
-        <li>
-          <strong>Dispense & Enjoy:</strong> After 15-20 minutes, the mixture will reach optimal frozen consistency.
-          Dispense via the spigot. Garnish with a salt rim and a sense of accomplishment.
-        </li>
-      </ol>
-      <h3 className="text-3xl">Cleaning Protocol</h3>
-      <p>
-        Run a cycle with warm, soapy water. Follow with a sanitizing rinse. The stainless steel components are
-        dishwasher safe. Refer to the manual for deep cleaning instructions.
-      </p>
-    </div>
+    <section className="space-y-12">
+      <div className="space-y-4 text-center">
+        <h2 className="text-3xl md:text-4xl font-black tracking-tighter uppercase border-b-4 border-black pb-2 inline-block">
+          HOW TO WRANGLE THE BEAST
+        </h2>
+        <p className="text-lg md:text-xl max-w-2xl mx-auto">
+          It's easier than wrestling a gator. Just follow these simple steps.
+        </p>
+      </div>
+
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="bg-white border-8 border-black p-6 md:p-8 shadow-brutal">
+          <div className="bg-red-600 text-white h-16 w-16 flex items-center justify-center text-4xl font-black border-4 border-black mb-4">
+            1
+          </div>
+          <h3 className="text-xl md:text-2xl font-black mb-4 uppercase border-b-4 border-black pb-2">
+            UNBOX & ASSEMBLE
+          </h3>
+          <p className="text-base md:text-lg font-mono">
+            Take it out the box. Put the stand together. If you can build with LEGOs, you can do this. No screws, no
+            fuss.
+          </p>
+        </div>
+
+        <div className="bg-white border-8 border-black p-6 md:p-8 shadow-brutal">
+          <div className="bg-blue-600 text-white h-16 w-16 flex items-center justify-center text-4xl font-black border-4 border-black mb-4">
+            2
+          </div>
+          <h3 className="text-xl md:text-2xl font-black mb-4 uppercase border-b-4 border-black pb-2">ADD THE MIX</h3>
+          <p className="text-base md:text-lg font-mono">
+            Pour in your favorite margarita mix, tequila, and triple sec. See our recipes tab if you need some
+            inspiration, you rascal.
+          </p>
+        </div>
+
+        <div className="bg-white border-8 border-black p-6 md:p-8 shadow-brutal">
+          <div className="bg-yellow-500 text-black h-16 w-16 flex items-center justify-center text-4xl font-black border-4 border-black mb-4">
+            3
+          </div>
+          <h3 className="text-xl md:text-2xl font-black mb-4 uppercase border-b-4 border-black pb-2">ICE IT DOWN</h3>
+          <p className="text-base md:text-lg font-mono">
+            Fill 'er up with ice. The more the better. You want it colder than a mother-in-law's stare. Give it a good
+            stir.
+          </p>
+        </div>
+
+        <div className="bg-white border-8 border-black p-6 md:p-8 shadow-brutal">
+          <div className="bg-black text-white h-16 w-16 flex items-center justify-center text-4xl font-black border-4 border-black mb-4">
+            4
+          </div>
+          <h3 className="text-xl md:text-2xl font-black mb-4 uppercase border-b-4 border-black pb-2">
+            DISPENSE & ENJOY
+          </h3>
+          <p className="text-base md:text-lg font-mono">
+            Put your cup under the spigot and let the good times flow. Garnish with a salt rim and a lime. Or don't.
+            You're the boss.
+          </p>
+        </div>
+      </div>
+    </section>
   )
 }
