@@ -1,61 +1,61 @@
+import { Card, CardContent, CardHeader } from "@/components/ui/card"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Star } from "lucide-react"
+
+const reviews = [
+  {
+    name: "Party Pete",
+    avatar: "/placeholder-user.jpg",
+    rating: 5,
+    comment:
+      "Bought this for my daughter's 4th birthday. Best. Party. Ever. The other parents were both horrified and impressed. 10/10 would do it again.",
+  },
+  {
+    name: "Brenda from HR",
+    avatar: "/placeholder-user.jpg",
+    rating: 5,
+    comment:
+      "Our quarterly earnings call has never been more... fluid. Productivity is through the roof, or maybe that's just the ceiling spinning. Who knows!",
+  },
+  {
+    name: "Anonymous Engineer",
+    avatar: "/placeholder-user.jpg",
+    rating: 4,
+    comment:
+      "The fluid dynamics are surprisingly robust, but the power draw tripped the main breaker for our entire city block. Worth it, but had to give it 4 stars for the city-wide blackout.",
+  },
+]
 
 export function ReviewsTab() {
   return (
-    <section className="space-y-12">
-      <div className="space-y-4 text-center">
-        <h2 className="text-4xl font-black tracking-tighter uppercase border-b-4 border-black pb-2 inline-block">
-          WHAT THE CAJUNS ARE SAYIN'
-        </h2>
-        <p className="text-xl max-w-2xl mx-auto">Don't take our word for it. Here's what real folks think.</p>
+    <div>
+      <h2 className="text-4xl font-black mb-6">Customer Feedback</h2>
+      <div className="space-y-6">
+        {reviews.map((review) => (
+          <Card key={review.name} className="border-2 border-black shadow-brutal">
+            <CardHeader className="flex flex-row items-center justify-between">
+              <div className="flex items-center gap-4">
+                <Avatar className="border-2 border-black">
+                  <AvatarImage src={review.avatar || "/placeholder.svg"} alt={review.name} />
+                  <AvatarFallback>{review.name.substring(0, 2)}</AvatarFallback>
+                </Avatar>
+                <p className="text-xl font-bold">{review.name}</p>
+              </div>
+              <div className="flex items-center gap-1">
+                {[...Array(review.rating)].map((_, i) => (
+                  <Star key={i} className="w-6 h-6 text-accent-foreground fill-accent" />
+                ))}
+                {[...Array(5 - review.rating)].map((_, i) => (
+                  <Star key={i} className="w-6 h-6 text-muted-foreground" />
+                ))}
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-lg font-mono">"{review.comment}"</p>
+            </CardContent>
+          </Card>
+        ))}
       </div>
-
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        <div className="bg-white border-8 border-black p-8 shadow-brutal flex flex-col">
-          <div className="flex mb-2">
-            <Star className="h-6 w-6 text-yellow-500 fill-current" />
-            <Star className="h-6 w-6 text-yellow-500 fill-current" />
-            <Star className="h-6 w-6 text-yellow-500 fill-current" />
-            <Star className="h-6 w-6 text-yellow-500 fill-current" />
-            <Star className="h-6 w-6 text-yellow-500 fill-current" />
-          </div>
-          <blockquote className="text-lg font-mono italic flex-grow">
-            "I brought this to the tailgate and became an instant legend. My brother-in-law tried to 'borrow' it. I told
-            him to get his own."
-          </blockquote>
-          <p className="text-right font-bold mt-4">- Boudreaux from Thibodaux</p>
-        </div>
-
-        <div className="bg-white border-8 border-black p-8 shadow-brutal flex flex-col">
-          <div className="flex mb-2">
-            <Star className="h-6 w-6 text-yellow-500 fill-current" />
-            <Star className="h-6 w-6 text-yellow-500 fill-current" />
-            <Star className="h-6 w-6 text-yellow-500 fill-current" />
-            <Star className="h-6 w-6 text-yellow-500 fill-current" />
-            <Star className="h-6 w-6 text-yellow-500 fill-current" />
-          </div>
-          <blockquote className="text-lg font-mono italic flex-grow">
-            "This thing is tougher than a two-dollar steak. We dropped it off the truck, hosed it off, and it still
-            worked perfectly. 10/10."
-          </blockquote>
-          <p className="text-right font-bold mt-4">- T-Claude from Lafayette</p>
-        </div>
-
-        <div className="bg-white border-8 border-black p-8 shadow-brutal flex flex-col">
-          <div className="flex mb-2">
-            <Star className="h-6 w-6 text-yellow-500 fill-current" />
-            <Star className="h-6 w-6 text-yellow-500 fill-current" />
-            <Star className="h-6 w-6 text-yellow-500 fill-current" />
-            <Star className="h-6 w-6 text-yellow-500 fill-current" />
-            <Star className="h-6 w-6 text-yellow-500 fill-current" />
-          </div>
-          <blockquote className="text-lg font-mono italic flex-grow">
-            "Finally, a margarita machine that understands me. It's loud, it's proud, and it makes a damn good drink.
-            Laissez les bons temps rouler!"
-          </blockquote>
-          <p className="text-right font-bold mt-4">- Marie from New Orleans</p>
-        </div>
-      </div>
-    </section>
+    </div>
   )
 }

@@ -1,64 +1,52 @@
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import { AlertCircle } from "lucide-react"
+
+const steps = [
+  {
+    title: "Unbox & Assemble",
+    description:
+      "Connect the three main components. If you need a wrench, you're doing it wrong. It should feel... forceful.",
+  },
+  {
+    title: "Sanitize",
+    description: "Run a cleaning cycle with industrial-grade sanitizer or cheap vodka. Your choice.",
+  },
+  {
+    title: "Load Ingredients",
+    description: "Pour liquids directly into the main tank. Do not pre-mix. The Rig knows what to do.",
+  },
+  {
+    title: "Engage Chiller",
+    description: "Flip the big, satisfyingly chunky red switch. Wait for the low hum to become a mild roar.",
+  },
+  { title: "Dispense & Dominate", description: "Open the spouts. Fill vessels. Achieve legendary status." },
+]
+
 export function DirectionsTab() {
   return (
-    <section className="space-y-12">
-      <div className="space-y-4 text-center">
-        <h2 className="text-3xl md:text-4xl font-black tracking-tighter uppercase border-b-4 border-black pb-2 inline-block">
-          HOW TO WRANGLE THE BEAST
-        </h2>
-        <p className="text-lg md:text-xl max-w-2xl mx-auto">
-          It's easier than wrestling a gator. Just follow these simple steps.
-        </p>
+    <div>
+      <h2 className="text-4xl font-black mb-6">Operating Instructions</h2>
+      <div className="space-y-4">
+        {steps.map((step, index) => (
+          <div key={step.title} className="flex items-start gap-4 p-4 border-2 border-black bg-muted">
+            <div className="flex items-center justify-center w-12 h-12 bg-primary text-primary-foreground font-black text-3xl">
+              {index + 1}
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold">{step.title}</h3>
+              <p className="text-lg">{step.description}</p>
+            </div>
+          </div>
+        ))}
       </div>
-
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-        <div className="bg-white border-8 border-black p-6 md:p-8 shadow-brutal">
-          <div className="bg-red-600 text-white h-16 w-16 flex items-center justify-center text-4xl font-black border-4 border-black mb-4">
-            1
-          </div>
-          <h3 className="text-xl md:text-2xl font-black mb-4 uppercase border-b-4 border-black pb-2">
-            UNBOX & ASSEMBLE
-          </h3>
-          <p className="text-base md:text-lg font-mono">
-            Take it out the box. Put the stand together. If you can build with LEGOs, you can do this. No screws, no
-            fuss.
-          </p>
-        </div>
-
-        <div className="bg-white border-8 border-black p-6 md:p-8 shadow-brutal">
-          <div className="bg-blue-600 text-white h-16 w-16 flex items-center justify-center text-4xl font-black border-4 border-black mb-4">
-            2
-          </div>
-          <h3 className="text-xl md:text-2xl font-black mb-4 uppercase border-b-4 border-black pb-2">ADD THE MIX</h3>
-          <p className="text-base md:text-lg font-mono">
-            Pour in your favorite margarita mix, tequila, and triple sec. See our recipes tab if you need some
-            inspiration, you rascal.
-          </p>
-        </div>
-
-        <div className="bg-white border-8 border-black p-6 md:p-8 shadow-brutal">
-          <div className="bg-yellow-500 text-black h-16 w-16 flex items-center justify-center text-4xl font-black border-4 border-black mb-4">
-            3
-          </div>
-          <h3 className="text-xl md:text-2xl font-black mb-4 uppercase border-b-4 border-black pb-2">ICE IT DOWN</h3>
-          <p className="text-base md:text-lg font-mono">
-            Fill 'er up with ice. The more the better. You want it colder than a mother-in-law's stare. Give it a good
-            stir.
-          </p>
-        </div>
-
-        <div className="bg-white border-8 border-black p-6 md:p-8 shadow-brutal">
-          <div className="bg-black text-white h-16 w-16 flex items-center justify-center text-4xl font-black border-4 border-black mb-4">
-            4
-          </div>
-          <h3 className="text-xl md:text-2xl font-black mb-4 uppercase border-b-4 border-black pb-2">
-            DISPENSE & ENJOY
-          </h3>
-          <p className="text-base md:text-lg font-mono">
-            Put your cup under the spigot and let the good times flow. Garnish with a salt rim and a lime. Or don't.
-            You're the boss.
-          </p>
-        </div>
-      </div>
-    </section>
+      <Alert className="mt-8 border-4 border-black bg-accent text-black shadow-brutal">
+        <AlertCircle className="h-6 w-6 text-black" />
+        <AlertTitle className="text-xl font-black">Safety Warning</AlertTitle>
+        <AlertDescription className="text-lg font-mono">
+          Never look directly into the mixing vortex. Do not operate within 10 feet of sensitive electronic equipment.
+          The manufacturer is not responsible for spontaneous dance parties or questionable life choices.
+        </AlertDescription>
+      </Alert>
+    </div>
   )
 }
