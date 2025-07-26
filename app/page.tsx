@@ -1,7 +1,9 @@
-"use client"
+import DesignSystem from "@/design-system"
 
-import BauhausBrutalism from "../design-system"
-
-export default function SyntheticV0PageForDeployment() {
-  return <BauhausBrutalism />
+export default function Home() {
+  return (
+    <main>
+      <DesignSystem />
+    </main>
+  )
 }
